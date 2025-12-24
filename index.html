@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>我的摄影作品</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      height: 250px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ 我的摄影世界</h1>
+    <p>记录光影，定格瞬间</p>
+  </header>
+
+  <div class="gallery" id="gallery">
+    <!-- 照片将通过 JS 动态插入 -->
+  </div>
+
+  <footer>
+    <p>© 2025 我的摄影作品集</p>
+  </footer>
+
+  <script>
+    // 👇 在这里填写你的照片信息
+    const photos = [
+      { src: "images/photo1.jpg", alt: "日落海岸" },
+      { src: "images/photo2.jpg", alt: "城市夜景" },
+      { src: "images/photo3.jpg", alt: "森林晨雾" },
+      // ➕ 继续添加你的照片，格式如上
+    ];
+
+    const gallery = document.getElementById("gallery");
+    photos.forEach(photo => {
+      const item = document.createElement("div");
+      item.className = "gallery-item";
+      item.innerHTML = `<img src="${photo.src}" alt="${photo.alt}" loading="lazy">`;
+      item.addEventListener("click", () => {
+        // 点击放大（简单实现）
+        alert("点击查看大图功能（后续可升级）\n图片路径：" + photo.src);
+      });
+      gallery.appendChild(item);
+    });
+  </script>
+</body>
+</html>
