@@ -379,29 +379,42 @@
   <script>
     // 👇 在这里填写你的照片信息（新增 category 字段）
     const photos = [
-      { src: "images/wuyi1.jpg", alt: "无翼老师", category: "无翼" },                                                
+      { src: "images/wuyi1.jpg", alt: "无翼老师", category: "无翼" },                                                  
       { src: "images/kira1.jpg", alt: "猪鼻KIRA", category: "KIRA" },            
       { src: "images/xxz1.jpg", alt: "BAKA寻寻子", category: "寻寻子" },              
       { src: "images/wuyi2.jpg", alt: "无翼老师", category: "无翼" },        
       { src: "images/kira2.jpg", alt: "猪鼻KIRA", category: "KIRA" },      
       { src: "images/xxz2.jpg", alt: "BAKA寻寻子", category: "寻寻子" },   
-      { src: "images/karinhu1.jpg", alt: "karinhu", category: "卡琳狐" },          
-      { src: "images/karinhu2.jpg", alt: "karinhu", category: "卡琳狐" },         
-      { src: "images/xxz3.jpg", alt: "BAKA寻寻子", category: "寻寻子" },       
+      { src: "images/karinhu1.jpg", alt: "karinhu", category: "卡琳狐" },            
+      { src: "images/karinhu2.jpg", alt: "karinhu", category: "卡琳狐" },
+      { src: "images/karinhu3.jpg", alt: "karinhu", category: "卡琳狐" },  
+      { src: "images/xxz3.jpg", alt: "BAKA寻寻子", category: "寻寻子" },         
       { src: "images/yt1.jpg", alt: "YT", category: "杨桃" },     
       { src: "images/wuyi3.jpg", alt: "无翼老师", category: "无翼" },   
       { src: "images/wuyi4.jpg", alt: "无翼老师", category: "无翼" },        
       { src: "images/zl1.jpg", alt: "朝露", category: "朝露" },    
-      { src: "images/bread1.jpg", alt: "面包", category: "面包" },        
+      { src: "images/bread1.jpg", alt: "面包", category: "面包" },          
       { src: "images/hy1.jpg", alt: "合影", category: "合影" },      
-      { src: "images/hy2.jpg", alt: "合影", category: "合影" },     
+      { src: "images/hy2.jpg", alt: "合影", category: "合影" }, 
+      { src: "images/hy3.jpg", alt: "合影", category: "合影" },   
+      { src: "images/jj1.jpg", alt: "卷卷", category: "卷卷" },   
+      { src: "images/mj1.jpg", alt: "莫洁", category: "莫洁" },   
+      { src: "images/mj2.jpg", alt: "莫洁", category: "莫洁" }, 
+      { src: "images/gn1.jpg", alt: "我和白茶", category: "跨年24" },
+      { src: "images/gn2.jpg", alt: "我和岛妈", category: "跨年24" },  
+      { src: "images/gn3.jpg", alt: "我和玥玥", category: "跨年24" },  
+      { src: "images/ok1.jpg", alt: "我和欧卡", category: "欧卡" }, 
+      { src: "images/zzz1.jpg", alt: "我和藻枣爪", category: "藻枣爪" },
+      { src: "images/tvs1.jpg", alt: "我和teevis", category: "teevis" },  
+      { src: "images/tvs2.jpg", alt: "teevis和我和一堆卡琳", category: "teevis" }, 
+      
 ];
 
     // 获取唯一分类
     const categories = ["全部", ...new Set(photos.map(p => p.category))];
 
     // 渲染分类按钮
-    const filtersContainer = document.getElementById("filters");
+    const filtersContainer = document.getElementById("filters");  
     categories.forEach(cat => {
       const btn = document.createElement("button");
       btn.className = "filter-btn";
@@ -509,3 +522,4 @@
   </script>
 </body>
 </html>
+
